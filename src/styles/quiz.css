@@ -1,0 +1,94 @@
+:root {
+  --bg1: #6dd5fa;
+  --bg2: #2980b9;
+  --card: rgba(255, 255, 255, 0.12);
+  --card-border: rgba(255, 255, 255, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: min(680px, 92vw);
+  margin: 40px auto;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  animation: floatIn .5s ease;
+}
+
+@keyframes floatIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+h1, h2 { margin: 0 0 14px; }
+
+p { font-size: 18px; margin: 8px 0; opacity: 0.95; }
+
+button {
+  margin: 10px;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: transform .06s ease, filter .2s ease, background .2s ease;
+  will-change: transform;
+}
+
+button:active { transform: scale(0.98); }
+
+/* Botão principal */
+.start-btn, .restart-btn {
+  background-color: #4caf50;
+  color: white;
+}
+.start-btn:hover, .restart-btn:hover {
+  filter: brightness(1.08);
+}
+
+/* Botões das respostas */
+.options {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 16px 0 6px;
+}
+.option-btn {
+  background-color: #2196f3;
+  color: white;
+}
+.option-btn:hover {
+  background-color: #1976d2;
+}
+
+/* Barra de progresso */
+.progress {
+  height: 10px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 14px 0 0;
+}
+.progress > span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width .25s ease;
+}
