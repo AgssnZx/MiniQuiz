@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Inicio from "./assets/inicio.png";
 import QuizContainer from "./components/quizContainer";
+import Footer from "./footer";
 
 function App() {
   return (
@@ -19,11 +20,14 @@ function App() {
           }}
         />
       </header>
-
+    
+        <main className="app-main">
       {/* Componente principal do quiz */}
       <QuizContainer />
-    </div>
-  );
+      </main>
+      <Footer/>
+    </div>  
+ );
 }
 
 export default App;
